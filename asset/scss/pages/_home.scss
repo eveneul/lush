@@ -37,6 +37,7 @@
 
 	.group-left {
 		position: relative;
+		z-index: 2;
 	}
 
 	.sc-title {
@@ -294,8 +295,7 @@
 		font-family: $font-en;
 		color: #333;
 		font-weight: 700;
-		font-size: 18px;
-
+		font-size: 1em;
 		.ingre {
 			position: relative;
 			& + .ingre {

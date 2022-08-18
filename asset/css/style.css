@@ -634,6 +634,7 @@ ol {
 }
 .sc-visual .group-left {
   position: relative;
+  z-index: 2;
 }
 .sc-visual .sc-title {
   text-transform: uppercase;
@@ -901,7 +902,7 @@ ol {
   font-family: "Archivo", "Noto Sans KR", sans-serif;
   color: #333;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 1em;
 }
 .sc-new .desc-box .ingre {
   position: relative;

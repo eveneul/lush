@@ -1,0 +1,1226 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap");
+@font-face {
+  font-family: "lush";
+  src: url(../font/Lush.ttf) format("truetype");
+}
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+}
+
+*,
+:after,
+:before {
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+:root {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+       text-size-adjust: 100%;
+  cursor: default;
+  line-height: 1.5;
+  overflow-wrap: break-word;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+     tab-size: 4;
+  color: #fff;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*
+    @세팅구역
+*/
+body {
+  background-color: #181818;
+  font-size: 14px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+a {
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+a:hover, a:focus {
+  text-decoration: none;
+}
+
+button {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+button:disabled {
+  cursor: not-allowed;
+}
+
+select,
+input,
+textarea,
+button {
+  font: inherit;
+  -webkit-appearance: none;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input:disabled {
+  background-color: rgba(255, 255, 255, 0);
+  cursor: not-allowed;
+}
+
+select {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+select::-ms-expand {
+  display: none;
+}
+
+input,
+textarea {
+  border: 0;
+}
+input::-moz-placeholder, textarea::-moz-placeholder {
+  /* Chrome, Safari, Firefox */
+  color: #444;
+  opacity: 1;
+}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  /* Chrome, Safari, Firefox */
+  color: #444;
+  opacity: 1;
+}
+input::placeholder,
+textarea::placeholder {
+  /* Chrome, Safari, Firefox */
+  color: #444;
+  opacity: 1;
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  /* IE, Edge */
+  color: #444;
+  opacity: 1;
+}
+input[readonly]::-moz-placeholder, input:disabled::-moz-placeholder, textarea[readonly]::-moz-placeholder, textarea:disabled::-moz-placeholder {
+  /* Chrome, Safari, Firefox */
+  color: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+}
+input[readonly]:-ms-input-placeholder, input:disabled:-ms-input-placeholder, textarea[readonly]:-ms-input-placeholder, textarea:disabled:-ms-input-placeholder {
+  /* Chrome, Safari, Firefox */
+  color: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+}
+input[readonly]::placeholder, input:disabled::placeholder,
+textarea[readonly]::placeholder,
+textarea:disabled::placeholder {
+  /* Chrome, Safari, Firefox */
+  color: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+}
+input[readonly]:-ms-input-placeholder, input:disabled:-ms-input-placeholder,
+textarea[readonly]:-ms-input-placeholder,
+textarea:disabled:-ms-input-placeholder {
+  /* IE, Edge */
+  color: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+}
+input::-ms-clear, input::-ms-reveal,
+textarea::-ms-clear,
+textarea::-ms-reveal {
+  /* IE, Edge */
+  display: none;
+}
+input::-webkit-inner-spin-button, input::-webkit-outer-spin-button,
+textarea::-webkit-inner-spin-button,
+textarea::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+.blind {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px 80px;
+  background-color: #181818;
+  transition: transform 0.5s;
+  z-index: 3;
+}
+.header .header-border {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #747474;
+  transform-origin: left 0;
+}
+.header .logo {
+  position: relative;
+  font-family: "Archivo Black", "Noto Sans KR", sans-serif;
+  font-size: 52px;
+}
+.header .logo a {
+  display: flex;
+}
+.header .logo .circle {
+  position: absolute;
+  top: 10px;
+  right: -20px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+.header .menu-area {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.header .menu-list {
+  display: flex;
+}
+.header .menu-item {
+  position: relative;
+  font-family: "Archivo", "Noto Sans KR", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 24px;
+}
+.header .menu-item::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  right: -15px;
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+  transform-origin: center center;
+  transform: scale(0);
+  transition: transform 0.3s ease-in-out;
+}
+.header .menu-item:hover::after {
+  transform: scale(1);
+}
+.header .menu-item + .menu-item {
+  margin-left: 50px;
+}
+.header .util-area {
+  display: flex;
+  align-items: center;
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+}
+.header .util-area a {
+  display: block;
+}
+.header .util-area a + a {
+  margin-left: 20px;
+}
+.header .util-area img {
+  width: 28px;
+  height: 28px;
+}
+.header .util-area .link-cart img {
+  width: 32px;
+  height: 32px;
+}
+.header .util-area .link-user img {
+  width: 32px;
+  height: 32px;
+}
+
+.footer .footer-top {
+  display: grid;
+  grid-template-columns: 210px 1fr;
+  grid-template-rows: 1fr 80px;
+  height: 100vh;
+  border-bottom: 1px solid #747474;
+}
+.footer .title-area {
+  grid-row: 1/-1;
+  border-right: 1px solid #747474;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #000;
+}
+.footer .title-area .logo {
+  text-transform: uppercase;
+  font-family: "Archivo Black", "Noto Sans KR", sans-serif;
+  font-size: 72px;
+  transform-origin: center center;
+  transform: rotate(-90deg);
+  margin-top: 100px;
+}
+.footer .title-area .link-relatesite {
+  text-transform: uppercase;
+  font-family: "Archivo", "Noto Sans KR", sans-serif;
+  font-weight: 700;
+  margin-bottom: 40px;
+  font-size: 18px;
+}
+.footer .title-area .link-relatesite i {
+  margin-left: 10px;
+  width: 30px;
+  height: 30px;
+  line-height: 28px;
+  text-align: center;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  font-size: 16px;
+}
+.footer .content {
+  display: flex;
+  justify-content: space-between;
+}
+.footer .left-area {
+  padding: 50px;
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #000;
+}
+.footer .campaign-area {
+  width: 400px;
+}
+.footer .campaign-item {
+  border-top: 1px solid #747474;
+  margin-bottom: 50px;
+}
+.footer .campaign-item .title {
+  padding-top: 20px;
+  font-family: "lush", "Noto Sans KR", sans-serif;
+  font-size: 36px;
+  letter-spacing: 0.05em;
+  margin-bottom: 20px;
+}
+.footer .campaign-item .desc {
+  font-family: "Archivo", "Noto Sans KR", sans-serif;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.footer .campaign-item .link-campaign {
+  text-transform: uppercase;
+  font-family: "Archivo", "Noto Sans KR", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+}
+.footer .campaign-item .link-campaign i {
+  margin-left: 10px;
+  transform: rotate(-45deg);
+  border: 1px solid #fff;
+  border-radius: 50%;
+  padding: 3px;
+  font-size: 14px;
+}
+.footer .addr-area {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 16px;
+  letter-spacing: -0.05em;
+}
+.footer .addr-area span {
+  position: relative;
+}
+.footer .addr-area span + span {
+  margin-left: 10px;
+}
+.footer .addr-area span + span::after {
+  content: "";
+  position: absolute;
+  top: 51%;
+  left: -6px;
+  transform: translateY(-50%) rotate(20deg);
+  display: inline-block;
+  width: 1px;
+  height: 60%;
+  background-color: #888;
+}
+.footer .right-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 60%;
+  height: 100%;
+}
+.footer .newsletter-area {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  padding: 50px;
+}
+.footer .newsletter-area .title {
+  font-family: "Archivo", "Noto Sans KR", sans-serif;
+  font-weight: 700;
+  font-size: 52px;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.2;
+  margin-bottom: 30px;
+}
+.footer .newsletter-area fieldset {
+  display: flex;
+  flex-direction: column;
+  border: none;
+}
+.footer .newsletter-area input {
+  display: block;
+  width: 500px;
+  padding: 14px 10px;
+  border: 2px solid #fff;
+  background-color: transparent;
+  border-radius: 100px;
+}
+.footer .newsletter-area input::-moz-placeholder {
+  color: #fff;
+  text-transform: uppercase;
+  font-family: "Archivo", "Noto Sans KR", sans-serif;
+}
+.footer .newsletter-area input:-ms-input-placeholder {
+  color: #fff;
+  text-transform: uppercase;
+  font-family: "Archivo", "Noto Sans KR", sans-serif;
+}
+.footer .newsletter-area input::placeholder {
+  color: #fff;
+  text-transform: uppercase;
+  font-family: "Archivo", "Noto Sans KR", sans-serif;
+}
+.footer .newsletter-area input + input {
+  margin-top: 20px;
+}
+.footer .newsletter-area .btn-submit {
+  margin-top: 20px;
+  font-family: "Archivo", "Noto Sans KR", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+}
+.footer .newsletter-area .btn-submit i {
+  margin-left: 10px;
+  width: 26px;
+  height: 26px;
+  line-height: 24px;
+  text-align: center;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  font-size: 16px;
+}
+.footer .focus {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  -webkit-mask: url(../images/circle-focus.svg) no-repeat center 0/90% 90%, linear-gradient(#fff, #fff);
+  -webkit-mask-composite: xor;
+  -webkit-mask-position: center;
+  -webkit-mask: url(../images/circle-focus.svg) no-repeat center 0/90% 90%, linear-gradient(#fff, #fff);
+          mask: url(../images/circle-focus.svg) no-repeat center 0/90% 90%, linear-gradient(#fff, #fff);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  -webkit-mask-position: center center;
+          mask-position: center center;
+  aspect-ratio: 1/1.03;
+}
+.footer .info-area {
+  border-top: 1px solid #747474;
+  padding: 0 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000;
+}
+.footer .info-area .sns-box {
+  display: flex;
+}
+.footer .info-area .sns-box a {
+  display: block;
+}
+.footer .info-area .sns-box a + a {
+  margin-left: 14px;
+}
+.footer .info-area .sns-box a.instagram i, .footer .info-area .sns-box a.youtube i {
+  font-size: 28px;
+}
+.footer .info-area .sns-box i {
+  font-size: 25px;
+}
+.footer .info-area .copy-area {
+  font-family: "Archivo", "Noto Sans KR", sans-serif;
+  font-weight: 700;
+}
+.footer .footer-bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 150px;
+}
+.footer .footer-bottom .img-box {
+  width: 200px;
+  margin-bottom: 50px;
+}
+.footer .footer-bottom .img-box img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.footer .footer-bottom .text-box span {
+  display: block;
+  font-size: 10vw;
+  font-family: "Archivo Black", "Noto Sans KR", sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.15;
+}
+.footer .footer-bottom .text-box span.animate {
+  height: 100vh;
+  line-height: 1;
+  font-size: 16vw;
+  transform-origin: 0 0;
+}
+
+.link-more {
+  display: inline-block;
+  position: relative;
+  text-transform: uppercase;
+  font-family: "Archivo", "Noto Sans KR", sans-serif;
+  padding: 8px 12px;
+  border: 2px solid #fff;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 18px;
+  overflow: hidden;
+  transition: color 0.4s;
+}
+.link-more::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 54%);
+  border-radius: 100px;
+  transition: width 0.3s ease-in-out;
+  color: #000;
+}
+.link-more:hover {
+  color: #000;
+}
+.link-more:hover::before {
+  width: 200%;
+  z-index: -1;
+}
+
+.particle {
+  display: inline-block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  z-index: -1;
+}
+.particle i {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #9f9f9f;
+  border-radius: 50%;
+}
+.particle i.front {
+  z-index: 1;
+}
+.particle i.back {
+  background-color: #9f9f9f;
+}
+
+.sc-visual {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  margin-bottom: 400px;
+}
+.sc-visual .inner {
+  display: flex;
+  padding: 200px 3vw 0;
+}
+.sc-visual .group-left {
+  position: relative;
+}
+.sc-visual .sc-title {
+  text-transform: uppercase;
+  font-family: "Archivo", "Noto Sans KR", sans-serif;
+  font-size: 110px;
+  font-weight: 700;
+  line-height: 1.2;
+  transform-origin: 0 0;
+}
+.sc-visual .sc-title span {
+  display: block;
+}
+.sc-visual .rotate-article {
+  position: absolute;
+  bottom: -35%;
+  left: 60%;
+  display: inline-block;
+  width: 180px;
+  height: 180px;
+}
+.sc-visual .rotate-article .img-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 168px;
+  height: 168px;
+}
+.sc-visual .rotate-article .img-box img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.sc-visual .rotate-article .animation-box {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 100px;
+  background-color: #000;
+  color: #000;
+  z-index: 1;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-image: url(../images/circle-perforated.svg);
+  mask-image: url(../images/circle-perforated.svg);
+}
+@-webkit-keyframes rotate360 {
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(1turn);
+  }
+}
+@keyframes rotate360 {
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(1turn);
+  }
+}
+.sc-visual .rotate-article .text {
+  position: relative;
+  z-index: 10;
+  transform-origin: center center;
+  transform-style: preserve-3d;
+  -webkit-animation: rotate360 20s linear 0s infinite running;
+          animation: rotate360 20s linear 0s infinite running;
+  width: 100%;
+  height: 100%;
+}
+.sc-visual .rotate-article .text svg text {
+  font-size: 10px;
+  font-weight: 700;
+  font-family: "Archivo", "Noto Sans KR", sans-serif;
+  text-transform: uppercase;
+  fill: #fff;
+  letter-spacing: -1;
+}
+.sc-visual .group-right {
+  position: absolute;
+  right: 10vw;
+  width: 400px;
+  height: 400px;
+}
+.sc-visual .group-right .img-box {
+  opacity: 0;
+  transform: rotate(10deg);
+}
+.sc-visual .link-more {
+  position: absolute;
+  bottom: 250px;
+}
+
+.sc-new .sc-title {
+  font-family: "Archivo", "Noto Sans KR", sans-serif;
+  font-weight: 700;
+  font-size: 52px;
+  text-transform: uppercase;
+  padding: 0 4vw 30px;
+}
+.sc-new .new-area {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  border-top: 1px solid #747474;
+  border-bottom: 1px solid #747474;
+}
+.sc-new .new-item {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+.sc-new .new-item .hover-focus {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  -webkit-mask-size: cover;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-image: url(../images/circle-hover.svg);
+  mask-image: url(../images/circle-hover.svg);
+  pointer-events: none;
+  transform-origin: center center;
+  transform: scale(2);
+  transition: transform 0.5s cubic-bezier(0.75, 0, 0.25, 1);
+}
+.sc-new .new-item:hover .hover-focus {
+  transform: scale(1.04);
+}
+.sc-new .new-item + .new-item {
+  border-left: 1px solid #747474;
+}
+.sc-new .new-item a {
+  display: block;
+  padding: 60px 40px 40px;
+}
+.sc-new .mainimg-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  transform: translateY(30px);
+}
+.sc-new .mainimg-box img {
+  width: 250px;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transform: rotate(8deg);
+}
+.sc-new .text-box {
+  position: absolute;
+  bottom: 50px;
+  left: 40px;
+  width: calc(100% - 80px);
+  padding: 20px 20px 15px;
+  background-color: #dfdfdf;
+}
+.sc-new .group-top {
+  position: relative;
+  display: flex;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #747474;
+}
+.sc-new .group-top::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  border-color: #181818 transparent transparent;
+  border-style: solid;
+  border-width: 10px 10px 0 0;
+}
+.sc-new .group-top::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  border-width: 0 10px 10px 0;
+  border-color: transparent #181818 transparent transparent;
+  border-style: solid;
+}
+.sc-new .icon-area {
+  margin-right: 15px;
+}
+.sc-new .icon-area img {
+  width: 50px;
+}
+.sc-new .title-area {
+  color: #000;
+  text-transform: uppercase;
+}
+.sc-new .title-area .title {
+  font-family: "lush", "Noto Sans KR", sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  margin-bottom: 5px;
+}
+.sc-new .title-area .desc {
+  font-family: "Archivo", "Noto Sans KR", sans-serif;
+}
+.sc-new .group-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+}
+.sc-new .group-bottom::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-color: transparent transparent transparent #181818;
+  border-style: solid;
+  border-width: 10px 0 0 10px;
+}
+.sc-new .group-bottom::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: auto;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-color: transparent transparent #181818;
+  border-style: solid;
+  border-width: 0 0 10px 10px;
+}
+.sc-new .img-box {
+  width: 45px;
+  height: 45px;
+}
+.sc-new .img-box img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.sc-new .desc-box {
+  font-family: "Archivo", "Noto Sans KR", sans-serif;
+  color: #333;
+  font-weight: 700;
+  font-size: 18px;
+}
+.sc-new .desc-box .ingre {
+  position: relative;
+}
+.sc-new .desc-box .ingre + .ingre {
+  margin-left: 16px;
+}
+.sc-new .desc-box .ingre + .ingre::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -10px;
+  display: inline-block;
+  width: 1px;
+  height: 100%;
+  background-color: #777;
+  transform: rotate(15deg);
+}
+
+.sc-about {
+  width: 100%;
+  padding-top: 200px;
+}
+.sc-about .inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+}
+.sc-about .text-area {
+  text-transform: uppercase;
+  font-family: "Archivo", "Noto Sans KR", sans-serif;
+  font-weight: 700;
+  text-align: center;
+  font-size: 36px;
+}
+.sc-about .text-area span {
+  font-size: 78px;
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 1;
+}
+.sc-about .text-area span + .word {
+  margin-left: 20px;
+}
+.sc-about .link-about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  min-width: 140px;
+  min-height: 140px;
+  font-family: "Archivo", "Noto Sans KR", sans-serif;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 500;
+  font-size: 18px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  padding: 70px;
+  margin-top: 50px;
+}
+
+.sc-spa {
+  margin-top: 500px;
+  margin-bottom: 100px;
+}
+.sc-spa .inner {
+  position: relative;
+  padding: 0 50px 500px;
+}
+.sc-spa .bgtext-area {
+  padding-top: 0px;
+}
+.sc-spa .bgtext-area span {
+  display: block;
+  text-transform: uppercase;
+  font-family: "Archivo Black", "Noto Sans KR", sans-serif;
+  font-size: 6vw;
+  line-height: 1;
+}
+.sc-spa .bgtext-area span.animate {
+  font-size: 20vw;
+  transform: translateX(-23px);
+  transform-origin: 0 0;
+}
+.sc-spa .title-area {
+  position: absolute;
+  right: 50px;
+  top: 0;
+  text-transform: uppercase;
+  font-family: "Archivo", "Noto Sans KR", sans-serif;
+  font-weight: 700;
+  width: 40%;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #747474;
+  font-size: 45px;
+}
+.sc-spa .thumb-area {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.sc-spa .thumb-area a {
+  display: block;
+  width: 450px;
+}
+.sc-spa .img-box {
+  position: relative;
+  width: 450px;
+  height: 450px;
+  overflow: hidden;
+}
+.sc-spa .img-box .hover-focus {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  -webkit-mask-size: cover;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-image: url(../images/circle-hover.svg);
+  mask-image: url(../images/circle-hover.svg);
+  pointer-events: none;
+  transform-origin: center center;
+  transform: scale(1.15);
+  transition: transform 0.5s cubic-bezier(0.75, 0, 0.25, 1);
+}
+.sc-spa .img-box:hover .hover-focus {
+  transform: scale(1.04);
+}
+.sc-spa .img-box img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.sc-spa .text-box {
+  margin-top: 20px;
+}
+.sc-spa .text-box .group-top {
+  font-family: "Archivo", "Noto Sans KR", sans-serif;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #747474;
+}
+.sc-spa .text-box .group-top .title {
+  font-size: 22px;
+}
+.sc-spa .text-box .group-top .btn-more {
+  position: relative;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border: 1px solid #fff;
+  font-size: 14px;
+  border-radius: 100px;
+  overflow: hidden;
+}
+.sc-spa .text-box .group-top .btn-more::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 54%);
+  border-radius: 100px;
+  transition: width 0.3s ease-in-out;
+  color: #000;
+}
+.sc-spa .text-box .group-top .btn-more:hover {
+  color: #000;
+}
+.sc-spa .text-box .group-top .btn-more:hover::before {
+  width: 200%;
+  z-index: -1;
+}
+.sc-spa .text-box .group-bottom {
+  padding-top: 20px;
+  text-transform: uppercase;
+  font-family: "Archivo", "Noto Sans KR", sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.4;
+}
+.sc-spa .link-more {
+  position: absolute;
+  top: 5px;
+  right: 50px;
+}
+
+.sc-product .sc-title {
+  padding-left: 40px;
+  padding-bottom: 40px;
+  text-transform: uppercase;
+  font-size: 62px;
+  font-family: "Archivo", "Noto Sans KR", sans-serif;
+  font-weight: 700;
+}
+.sc-product .product-slide {
+  position: relative;
+  border-top: 1px solid #747474;
+}
+.sc-product .slide-controls {
+  position: absolute;
+  top: 50px;
+  left: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.sc-product .slide-controls .btn-set {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-size: 18px;
+  color: #fff;
+  width: 48px;
+  height: 48px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
+.sc-product .slide-controls .btn-set::after {
+  display: none;
+}
+.sc-product .slide-controls .btn-set.swiper-button-next {
+  margin-bottom: 10px;
+}
+.sc-product .slide-controls .btn-set.swiper-button-prev {
+  margin-top: 10px;
+}
+.sc-product .slide-controls .swiper-pagination {
+  color: #fff;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 18px;
+  font-family: "Archivo", "Noto Sans KR", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+}
+.sc-product .swiper-wrapper {
+  position: relative;
+}
+.sc-product .swiper-slide {
+  display: grid;
+  grid-template-columns: 210px 1fr;
+}
+.sc-product .title-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 50px 0;
+  border-right: 1px solid #747474;
+}
+.shower .sc-product .title-area {
+  background-color: red;
+}
+.sc-product .title-area .title {
+  display: block;
+  transform: rotate(-90deg);
+  transform-origin: center center;
+  padding-right: 100px;
+  font-size: 52px;
+  font-family: "Archivo", "Noto Sans KR", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.sc-product .title-area .cate {
+  display: block;
+  transform: rotate(-90deg);
+  transform-origin: center center;
+  padding-left: 60px;
+  font-size: 18px;
+  font-family: "Archivo", "Noto Sans KR", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.sc-product .content-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 50px;
+  height: 100%;
+}
+.sc-product .content-area .group-left {
+  width: 40%;
+}
+.sc-product .content-area .group-left .desc {
+  width: 100%;
+  font-family: "Archivo", "Noto Sans KR", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+.sc-product .content-area .group-right {
+  width: 60%;
+}

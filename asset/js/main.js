@@ -330,9 +330,10 @@ $(function () {
 
 	$(window).scroll(function (e) {
 		let scrolled = $(this).scrollTop();
+		const h = $(document).height();
 		let speed = 500;
 
-		if (scrolled >= 11200) {
+		if (scrolled >= h - 1200) {
 			$('body, html').animate({ scrollTop: 0 }, speed);
 		}
 	});

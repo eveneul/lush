@@ -1,4 +1,6 @@
 @charset "UTF-8";
+/*반응형, 브라우저 크기가 768이상, 1023px 이하일때*/
+/*반응형, 브라우저 크기가 1024px 이상, 1630 이하일때*/
 @import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap");
 @font-face {
   font-family: "lush";
@@ -739,6 +741,70 @@ ol {
   bottom: 250px;
 }
 
+@media (max-width: 768px) {
+  .sc-visual {
+    margin-bottom: 100px;
+  }
+  .sc-visual .inner {
+    display: flex;
+    padding: 200px 3vw 0;
+  }
+  .sc-visual .sc-title {
+    font-size: 3rem;
+    line-height: 1.4;
+  }
+  .sc-visual .rotate-article {
+    bottom: -42%;
+    left: 82%;
+    width: 120px;
+    height: 120px;
+  }
+  .sc-visual .rotate-article .img-box {
+    width: 100%;
+    height: 100%;
+  }
+  .sc-visual .group-right {
+    display: none;
+  }
+  .sc-visual .link-more {
+    position: absolute;
+    bottom: 250px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1023px) {
+  .sc-visual .sc-title {
+    font-size: 3rem;
+    line-height: 1.4;
+  }
+  .sc-visual .rotate-article {
+    bottom: -42%;
+    left: 82%;
+    width: 120px;
+    height: 120px;
+  }
+  .sc-visual .rotate-article .img-box {
+    width: 100%;
+    height: 100%;
+  }
+  .sc-visual .group-right {
+    display: block;
+    width: 200px;
+    height: 200px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1630px) {
+  .sc-visual .sc-title {
+    font-size: 4rem;
+    line-height: 1.4;
+  }
+  .sc-visual .group-right {
+    width: 260px;
+    height: 260px;
+  }
+  .sc-visual .link-more {
+    bottom: 200px;
+  }
+}
 .sc-new .sc-title {
   font-family: "Archivo", "Noto Sans KR", sans-serif;
   font-weight: 700;

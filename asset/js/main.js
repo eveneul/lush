@@ -328,13 +328,15 @@ $(function () {
 
 	// 스크롤 마지막까지 내리면 맨 상단으로 이동하기
 
-	$(window).scroll(function (e) {
-		let scrolled = $(this).scrollTop();
-		const h = $(document).height();
-		let speed = 500;
-
-		if (scrolled >= h - 1200) {
-			$('body, html').animate({ scrollTop: 0 }, speed);
-		}
+	gsap.to('.footer-bottom .animate', {
+		scrollTrigger: {
+			trigger: '.footer-bottom .animate',
+			start: 'top top',
+			end: '+=100%',
+			markers: true,
+			onEnter: function () {
+				$('body, html').animate({ scrollTop: 0 }, 500);
+			},
+		},
 	});
 });

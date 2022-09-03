@@ -318,7 +318,7 @@ $(function () {
 	gsap.to('.footer-bottom .animate', {
 		scrollTrigger: {
 			trigger: '.footer-bottom .animal',
-			start: 'bottom top',
+			start: 'top top',
 			end: '+=100%',
 			scrub: 1,
 			pin: '.footer-bottom .animate',
@@ -333,7 +333,6 @@ $(function () {
 			trigger: '.footer-bottom .animate',
 			start: 'top top',
 			end: '+=100%',
-			markers: true,
 			onEnter: function () {
 				$('body, html').animate({ scrollTop: 0 }, 500);
 			},
